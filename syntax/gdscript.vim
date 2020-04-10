@@ -8,22 +8,22 @@ let b:current_syntax = "gdscript"
 let s:save_cpo = &cpo
 set cpo&vim
 
-syn keyword gdConditional if elif else match
-syn keyword gdRepeat      for while
-syn keyword gdOperator    and or not is in
-syn match   gdOperator    "\V&&\|||\|!\|&\|^\||\|~\|*\|/\|%\|+\|-\|=\|<\|>"
-syn match   gdDelimiter   "\V(\|)\|[\|]\|{\|}"
-syn keyword gdStatement   break continue pass return
-syn keyword gdKeyword     extends as self tool signal const enum var
+syn keyword gdConditional   if elif else match
+syn keyword gdRepeat        for while
+syn keyword gdOperator      and or not is in
+syn match   gdOperator      "\V&&\|||\|!\|&\|^\||\|~\|*\|/\|%\|+\|-\|=\|<\|>"
+syn match   gdDelimiter     "\V(\|)\|[\|]\|{\|}"
+syn keyword gdStatement     break continue pass return
+syn keyword gdKeyword       extends as self tool signal const enum var
                           \ onready export setget breakpoint preload yield
                           \ assert
-syn match   gdKeyword     "\v^\s*(((remote|master|puppet)\s*)=func)"
+syn match   gdKeyword       "\v^\s*(((remote|master|puppet)\s*)=func)"
                           \ nextgroup=gdFunction skipwhite
-syn match   gdKeyword     "\v^\s*(((remotesync|mastersync|puppetsync)\s*)=func)"
+syn match   gdKeyword       "\v^\s*(((remotesync|mastersync|puppetsync)\s*)=func)"
                           \ nextgroup=gdFunction skipwhite
-syn match   gdKeyword     "\v^\s*((static\s*)=func|class)"
+syn match   gdKeyword       "\v^\s*((static\s*)=func|class)"
                           \ nextgroup=gdFunction skipwhite
-syn keyword gdBoolean     true false
+syn keyword gdBoolean       true false
 
 syn match   gdMember   "\v<(\.)@<=[a-z_]+\w*>"
 syn match   gdFunction "\v<\w*>(\()@="
@@ -31,16 +31,16 @@ syn match   gdSignal   "\v(<signal>\s+)@<=<\w+>"
 syn match   gdSetGet   "\v(<setget>\s+)@<=<\w+>"
 syn match   gdSetGet   "\v(<setget>\s+\w*\s*,\s*)@<=<\w+>"
 
-syn keyword gdNull      null
-syn keyword gdClass     int float bool
-syn match   gdClass     "\v<\u\w+>"
-syn match   gdConstant  "\v<[A-Z_]+[A-Z0-9_]*>"
-syn keyword gdClass     String Vector2 Rect2 Vector3 Transform2D Plane Quat
-                        \ AABB Basis Transform Color NodePath RID Object Array
-                        \ IP JSON OS
-syn keyword gdClass     PoolByteArray PoolIntArray PoolRealArray
-                        \ PoolStringArray PoolVector2Array PoolVector3Array
-                        \ PoolColorArray
+syn keyword gdNull       null
+syn keyword gdClass      int float bool
+syn match   gdClass      "\v<\u\w+>"
+syn match   gdConstant   "\v<[A-Z_]+[A-Z0-9_]*>"
+syn keyword gdClass      String Vector2 Rect2 Vector3 Transform2D Plane Quat
+                       \ AABB Basis Transform Color NodePath RID Object Array
+                       \ IP JSON OS
+syn keyword gdClass      PoolByteArray PoolIntArray PoolRealArray
+                       \ PoolStringArray PoolVector2Array PoolVector3Array
+                       \ PoolColorArray
 
 syn match   gdNode      "\v\$\a+\w*"
 
