@@ -8,11 +8,12 @@ let b:current_syntax = "gsl"
 let s:save_cpo = &cpo
 set cpo&vim
 
-syn keyword gslConditional if else
-syn keyword gslRepeat      for while
+syn keyword gslConditional if else switch
+syn keyword gslLabel       case default
+syn keyword gslRepeat      for do while
 syn match   gslOperator    "\V&&\|||\|!\|&\|^\||\|~\|*\|/\|%\|+\|-\|=\|<\|>\|;"
 syn match   gslDelimiter   "\V(\|)\|[\|]\|{\|}"
-syn keyword gslStatement   return discard
+syn keyword gslStatement   return discard continue break
 syn keyword gslBoolean     true false
 
 syn keyword gslKeyword shader_type render_mode varying flat noperspective smooth
@@ -20,7 +21,9 @@ syn keyword gslKeyword shader_type render_mode varying flat noperspective smooth
 
 syn keyword gslType void bool bvec2 bvec3 bvec4 int ivec2 ivec3 ivec4
                   \ uint uvec2 uvec3 uvec4 float vec2 vec3 vec4
-                  \ mat2 mat3 mat4 sampler2D isampler2D usampler2D samplerCube
+                  \ mat2 mat3 mat4 sampler2D isampler2D usampler2D
+                  \ sampler2DArray isampler2DArray usampler2DArray
+                  \ sampler3D isampler3D usampler3D samplerCube
 
 syn match   gslMember   "\v<(\.)@<=[a-z_]+\w*>"
 syn match   gslConstant "\v<[A-Z_]+[A-Z0-9_]*>"
@@ -36,6 +39,7 @@ syn region  gslComment start="/\*" end="\*/"
 syn keyword gslTodo    TODO FIXME XXX NOTE BUG HACK OPTIMIZE containedin=gslComment
 
 hi def link gslConditional Conditional
+hi def link gslLabel       Label
 hi def link gslRepeat      Repeat
 hi def link gslOperator    Operator
 hi def link gslDelimiter   Delimiter
