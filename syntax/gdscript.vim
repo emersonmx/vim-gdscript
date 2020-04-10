@@ -56,6 +56,7 @@ syn match   gdFormat "\v\%[+-]=(\d*|\*)=\.=(\d*|\*)=[scdoxXf]" containedin=gdStr
 
 syn match   gdNumber   "\v<\d+(\.)@!>"
 syn match   gdNumber   "\v<0x\x+(\.)@!>"
+syn match   gdNumber   "\v<0b[01]+(\.)@!>"
 syn match   gdFloat    "\v<\d*\.\d+(\.)@!>"
 syn match   gdFloat    "\v<\d*\.=\d+(e-=\d+)@="
 syn match   gdExponent "\v(\d*\.=\d+)@<=e-=\d+>"
@@ -103,6 +104,8 @@ hi def link gdEscapeError Error
 
 hi def link gdComment Comment
 hi def link gdTodo    Todo
+
+let b:current_syntax = "gdscript"
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
