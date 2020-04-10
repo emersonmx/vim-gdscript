@@ -3,7 +3,6 @@
 if exists("b:current_syntax")
     finish
 endif
-let b:current_syntax = "gdscript"
 
 let s:save_cpo = &cpo
 set cpo&vim
