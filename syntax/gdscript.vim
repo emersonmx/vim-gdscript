@@ -35,12 +35,7 @@ syn keyword gdNull       null
 syn keyword gdClass      int float bool
 syn match   gdClass      "\v<\u\w+>"
 syn match   gdConstant   "\v<[A-Z_]+[A-Z0-9_]*>"
-syn keyword gdClass      String Vector2 Rect2 Vector3 Transform2D Plane Quat
-                       \ AABB Basis Transform Color NodePath RID Object Array
-                       \ IP JSON OS
-syn keyword gdClass      PoolByteArray PoolIntArray PoolRealArray
-                       \ PoolStringArray PoolVector2Array PoolVector3Array
-                       \ PoolColorArray
+syn keyword gdClass      AABB IP JSON OS RID
 
 syn match   gdNode      "\v\$\a+\w*"
 
