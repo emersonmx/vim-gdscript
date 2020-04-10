@@ -3,7 +3,6 @@
 if exists("b:current_syntax")
     finish
 endif
-let b:current_syntax = "gsl"
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -58,6 +57,8 @@ hi def link gslExponent Special
 
 hi def link gslComment Comment
 hi def link gslTodo    Todo
+
+let b:current_syntax = "gsl"
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
