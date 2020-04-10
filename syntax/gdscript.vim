@@ -26,9 +26,10 @@ syn match   gdscriptSetGet         "\v(<setget>\s+\w*\s*,\s*)@<=<\w+>"
 syn match   gdscriptFunction       '\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*' display contained
 syn match   gdscriptFunctionCall   '\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\ze\%(\s*(\)'
 syn keyword gdscriptClassVar       self
-syn match   gdscriptOperator       '\V=\|-\|+\|*|@\|/\|%\|&\||\|^\|~\|<\|>\|!=\|:='
+syn match   gdscriptOperator       '\V=\|-\|+\|*\|@\|/\|%\|&\||\|^\|~\|<\|>\|!=\|:='
 syn keyword gdscriptOperator       and or in not
-syn match   gdscriptLiteral        "\v^\s*\$\w*"
+syn match   gdscriptNodePath       "\v\@([a-zA-Z_/][a-zA-Z0-9_/]+)?" nextgroup=gdscriptString
+syn match   gdscriptNodePath       "\v\$([a-zA-Z_/][a-zA-Z0-9_/]+)?" nextgroup=gdscriptString
 syn region  gdscriptString         start='\v\"' end='\v\"'
 syn region  gdscriptString         start='\v\'' end='\v\''
 syn match   gdscriptEscapeError    "\v\\."             containedin=gdscriptString
@@ -70,6 +71,7 @@ hi def link gdscriptClassVar     Identifier
 hi def link gdscriptStatement    Special
 hi def link gdscriptOperator     Keyword
 hi def link gdscriptLiteral      Keyword
+hi def link gdscriptNodePath     String
 hi def link gdscriptString       String
 hi def link gdscriptEscape       Special
 hi def link gdscriptFormat       Special
